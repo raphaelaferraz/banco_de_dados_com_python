@@ -38,7 +38,7 @@ dados4 = cursor.execute('SELECT COUNT(*) FROM alunos')
 # Remoção do aluno por id
 # cursor.execute('DELETE FROM alunos WHERE id = 5')
 
-# Adição de nova coluna
+# Adição de nova Tabela
 # cursor.execute('CREATE TABLE clientes (id INT, nome VARCHAR(150), idade INT, saldo FLOAT)')
 
 # Inserção de dados na coluna
@@ -73,7 +73,19 @@ dados8 = cursor.execute(
 # cursor.execute('UPDATE clientes SET saldo = 20000 WHERE id=2')
 
 # Remover cliente por Id
-cursor.execute('DELETE FROM clientes WHERE id = 5')
+# cursor.execute('DELETE FROM clientes WHERE id = 5')
+
+# Adição de nova Tabela
+cursor.execute('''
+CREATE TABLE compras (
+  id INT PRIMARY KEY,
+  cliente_id INT,
+  produto VARCHAR(150),
+  valor INT,
+  FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+)
+''')
+
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
