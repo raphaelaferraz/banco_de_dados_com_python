@@ -49,8 +49,13 @@ dados4 = cursor.execute('SELECT COUNT(*) FROM alunos')
 
 # Nome e a idade dos clientes com idade superior a 30 anos
 dados5 = cursor.execute('SELECT nome, idade FROM clientes WHERE idade > 30;')
-for dado in dados5:
-  print(dado)
+# for dado in dados5:
+#   print(dado)
+
+# Saldo médio dos clientes
+dados6 = cursor.execute('SELECT AVG(saldo) AS saldo_medio FROM clientes;')
+for dado in dados6:
+   print(dado)
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
