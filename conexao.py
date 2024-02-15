@@ -64,9 +64,13 @@ dados7 = cursor.execute(
 #     print(dado)
 
 # Clientes com saldo acima de 1000
-dados8 = cursor.execute('SELECT COUNT(*) AS clientes_com_saldo_acima_de_1000 FROM clientes WHERE saldo > 1000;')
-for dado in dados8:
-    print(dado)
+dados8 = cursor.execute(
+    'SELECT COUNT(*) AS clientes_com_saldo_acima_de_1000 FROM clientes WHERE saldo > 1000;')
+# for dado in dados8:
+#     print(dado)
+
+# Atualização de saldo
+# cursor.execute('UPDATE clientes SET saldo = 20000 WHERE id=2')
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
