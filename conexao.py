@@ -86,10 +86,15 @@ dados8 = cursor.execute(
 # )
 # ''')
 
-# Inserção de dados na tabela 
-cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (1, 1, 'Livro de SQL', 50.00)");
-cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (2, 3, 'Teclado Mecânico', 250.00)");
-cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (3, 2, 'Mouse Gamer', 150.00)");
+# Inserção de dados na tabela
+# cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (1, 1, 'Livro de SQL', 50.00)");
+# cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (2, 3, 'Teclado Mecânico', 250.00)");
+# cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (3, 2, 'Mouse Gamer', 150.00)");
 
+# Consulta para exibir Nome do Cliente, Produto e Valor de cada compra
+dados9 = cursor.execute('SELECT c.nome, p.produto, p.valor FROM clientes c JOIN compras p ON c.id = p.cliente_id;')
+for dado in dados9:
+  print(dado)
+  
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
