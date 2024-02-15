@@ -54,8 +54,14 @@ dados5 = cursor.execute('SELECT nome, idade FROM clientes WHERE idade > 30;')
 
 # Saldo médio dos clientes
 dados6 = cursor.execute('SELECT AVG(saldo) AS saldo_medio FROM clientes;')
-for dado in dados6:
-   print(dado)
+# for dado in dados6:
+#    print(dado)
+
+# Cliente com saldo máximo
+dados7 = cursor.execute(
+    'SELECT nome, MAX(saldo) AS saldo_maximo FROM clientes;')
+for dado in dados7:
+    print(dado)
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
