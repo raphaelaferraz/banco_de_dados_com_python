@@ -72,5 +72,8 @@ dados8 = cursor.execute(
 # Atualização de saldo
 # cursor.execute('UPDATE clientes SET saldo = 20000 WHERE id=2')
 
+# Remover cliente por Id
+cursor.execute('DELETE FROM clientes WHERE id = 5')
+
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
