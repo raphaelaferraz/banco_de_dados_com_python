@@ -23,8 +23,13 @@ dados2 = cursor.execute('SELECT nome, idade FROM alunos WHERE idade > 20')
 
 # Visualizar alunos em ordem alfabética
 dados3 = cursor.execute('SELECT * FROM alunos WHERE curso == "Eng. de Software" ORDER BY nome')
-for aluno in dados3:
-  print(aluno)
+# for aluno in dados3:
+#   print(aluno)
+
+# Contagem de alunos na tabela
+dados4 = cursor.execute('SELECT COUNT(*) FROM alunos')
+for dado in dados4:
+  print(dado)
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
