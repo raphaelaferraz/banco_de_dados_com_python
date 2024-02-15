@@ -35,8 +35,11 @@ dados4 = cursor.execute('SELECT COUNT(*) FROM alunos')
 # Atualização de idade de um dos alunos da tabela
 # cursor.execute('UPDATE alunos SET idade = 20 WHERE nome="Victor"')
 
-# Remoção do aluno por id 
-cursor.execute('DELETE FROM alunos WHERE id = 5')
+# Remoção do aluno por id
+# cursor.execute('DELETE FROM alunos WHERE id = 5')
+
+# Adição de nova coluna
+cursor.execute('CREATE TABLE clientes (id INT, nome VARCHAR(150), idade INT, saldo FLOAT)')
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
