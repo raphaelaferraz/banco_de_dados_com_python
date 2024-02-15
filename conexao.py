@@ -39,7 +39,14 @@ dados4 = cursor.execute('SELECT COUNT(*) FROM alunos')
 # cursor.execute('DELETE FROM alunos WHERE id = 5')
 
 # Adição de nova coluna
-cursor.execute('CREATE TABLE clientes (id INT, nome VARCHAR(150), idade INT, saldo FLOAT)')
+# cursor.execute('CREATE TABLE clientes (id INT, nome VARCHAR(150), idade INT, saldo FLOAT)')
+
+# Inserção de dados na coluna
+# cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (1, "Ana Silva", 35, 1500.00)');
+# cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (2, "Bruno Martins", 28, 950.00)');
+# cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (3, "Carlos Eduardo", 42, 2000.00)');
+# cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (4, "Daniela Rocha", 30, 3000.00)');
+
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
