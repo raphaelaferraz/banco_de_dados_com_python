@@ -60,7 +60,12 @@ dados6 = cursor.execute('SELECT AVG(saldo) AS saldo_medio FROM clientes;')
 # Cliente com saldo máximo
 dados7 = cursor.execute(
     'SELECT nome, MAX(saldo) AS saldo_maximo FROM clientes;')
-for dado in dados7:
+# for dado in dados7:
+#     print(dado)
+
+# Clientes com saldo acima de 1000
+dados8 = cursor.execute('SELECT COUNT(*) AS clientes_com_saldo_acima_de_1000 FROM clientes WHERE saldo > 1000;')
+for dado in dados8:
     print(dado)
 
 conexao.commit()  # envio de informações
