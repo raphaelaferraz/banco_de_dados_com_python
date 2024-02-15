@@ -18,7 +18,12 @@ dados = cursor.execute('SELECT * FROM alunos')
 
 # Visualizar aluno com mais de 20 anos
 dados2 = cursor.execute('SELECT nome, idade FROM alunos WHERE idade > 20')
-for aluno in dados2:
+# for aluno in dados2:
+#   print(aluno)
+
+# Visualizar alunos em ordem alfabética
+dados3 = cursor.execute('SELECT * FROM alunos WHERE curso == "Eng. de Software" ORDER BY nome')
+for aluno in dados3:
   print(aluno)
 
 conexao.commit()  # envio de informações
