@@ -41,7 +41,7 @@ dados4 = cursor.execute('SELECT COUNT(*) FROM alunos')
 # Adição de nova Tabela
 # cursor.execute('CREATE TABLE clientes (id INT, nome VARCHAR(150), idade INT, saldo FLOAT)')
 
-# Inserção de dados na coluna
+# Inserção de dados na tabela
 # cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (1, "Ana Silva", 35, 1500.00)');
 # cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (2, "Bruno Martins", 28, 950.00)');
 # cursor.execute('INSERT INTO clientes (id, nome, idade, saldo) VALUES (3, "Carlos Eduardo", 42, 2000.00)');
@@ -76,16 +76,20 @@ dados8 = cursor.execute(
 # cursor.execute('DELETE FROM clientes WHERE id = 5')
 
 # Adição de nova Tabela
-cursor.execute('''
-CREATE TABLE compras (
-  id INT PRIMARY KEY,
-  cliente_id INT,
-  produto VARCHAR(150),
-  valor INT,
-  FOREIGN KEY (cliente_id) REFERENCES clientes(id)
-)
-''')
+# cursor.execute('''
+# CREATE TABLE compras (
+#   id INT PRIMARY KEY,
+#   cliente_id INT,
+#   produto VARCHAR(150),
+#   valor INT,
+#   FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+# )
+# ''')
 
+# Inserção de dados na tabela 
+cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (1, 1, 'Livro de SQL', 50.00)");
+cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (2, 3, 'Teclado Mecânico', 250.00)");
+cursor.execute("INSERT INTO compras (id, cliente_id, produto, valor) VALUES (3, 2, 'Mouse Gamer', 150.00)");
 
 conexao.commit()  # envio de informações
 conexao.close()  # fechamento da conexão com o banco de dados
